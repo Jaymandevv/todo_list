@@ -10,7 +10,7 @@ pub fn mark_as_done(tasks: &mut Vec<Task>) {
         Ok(num) => num,
         Err(_) => {
             println!("Invalid number");
-            0
+            return;
         }
     };
 

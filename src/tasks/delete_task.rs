@@ -10,7 +10,7 @@ pub fn delete_task(tasks: &mut Vec<Task>) {
             Ok(num) => num,
             Err(_) => {
                 println!("Invalid number");
-                0   
+                return;  
             }
     };
 

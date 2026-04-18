@@ -7,6 +7,7 @@ mod add_task;
 mod view_tasks;
 mod delete_task;
 mod mark_as_done;
+mod add_priority;
 
 pub fn tasks_control() {
      let mut tasks: Vec<Task> = Vec::new();

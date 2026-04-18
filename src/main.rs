@@ -5,8 +5,17 @@ mod tasks;
 #[derive(Debug)]
 pub struct Task {
     pub title: String,
-    pub done: bool
+    pub done: bool,
+    pub priority: Priority,
 }
+
+#[derive(Debug)]
+pub enum Priority {
+    High,
+    Medium,
+    Low
+    
+} 
 
 
 fn main() {
@@ -25,4 +34,4 @@ tasks_control();
 // Improvement
 //1. Add modules ✅
 //2. Add delete task ✅
-//3. Add priority 
+//3. Add priority ✅

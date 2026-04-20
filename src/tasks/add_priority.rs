@@ -1,5 +1,6 @@
-use std::io;
+use std::{io, convert::TryFrom};
 use crate::Priority;
+
 
 pub fn add_priority() -> Priority {
     loop {
@@ -21,17 +22,13 @@ pub fn add_priority() -> Priority {
           }
      };
 
-      match index {
-          1 => return Priority::High,
-          2 => return Priority::Medium,
-          3 => return Priority::Low,
-          _ => {
-               println!("❌ Wrong choice");
+     match Priority::try_from(index) {
+          Ok(priority) => return priority,
+          Err(err) => {
+               println!("{}", err);
                continue;
-          },
-
-
-     };
+          }
+     }
 
    
 }

@@ -1,3 +1,4 @@
+use std::convert::TryFrom;
 use tasks::tasks_control;
 
 
@@ -16,6 +17,20 @@ pub enum Priority {
     Low
     
 } 
+
+impl TryFrom<u32> for Priority {
+    type Error = &'static str;
+
+    fn try_from(value: u32) -> Result<Self, Self::Error> {
+        match value {
+            1 => Ok(Priority::High),
+            2 => Ok(Priority::Medium),
+            3 => Ok(Priority::Low),
+            _ => Err("Invalid Priority Number")
+        }
+    }
+    
+}
 
 
 fn main() {
